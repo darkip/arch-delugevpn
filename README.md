@@ -167,7 +167,7 @@ docker run -d \
     -e VPN_DEVICE_TYPE=tun \
     -e VPN_PROV=airvpn \
     -e VPN_INCOMING_PORT=12345 \
-    -e ENABLE_PRIVOXY=no \
+    -e ENABLE_PRIVOXY=yes \
     -e LAN_NETWORK=192.168.1.0/24 \
     -e NAME_SERVERS=8.8.8.8,8.8.4.4 \
     -e DEBUG=false \
