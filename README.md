@@ -140,6 +140,7 @@ Mullvad users will need to generate a unique OpenVPN configuration file by using
 7. Check supervisor.log to make sure you are connected to the tunnel
 
 **Mullvad example**
+```
 docker run -d \
     --cap-add=NET_ADMIN \
     -p 8112:8112 \
@@ -163,6 +164,7 @@ docker run -d \
     -e PUID=0 \
     -e PGID=0 \
     binhex/arch-delugevpn
+```
 
 **Notes**
 
