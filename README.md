@@ -139,6 +139,9 @@ Mullvad users will need to generate a unique OpenVPN configuration file by using
 6. Start the delugevpn docker
 7. Check supervisor.log to make sure you are connected to the tunnel
 
+It is also recommended to set port forwarding by going to https://mullvad.net/account/ and adding a port which should be provided as the
+`VPN_INCOMING_PORT` env var.
+
 **Mullvad example**
 
 This currently acts as an "airvpn" provider as Mullvad also use certificate based authentication.
