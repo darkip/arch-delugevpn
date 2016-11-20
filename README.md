@@ -124,7 +124,7 @@ docker run -d \
     binhex/arch-delugevpn
 ```
 
-**Mullvad example**
+**Mullvad provider**
 
 Mullvad users will need to generate a unique OpenVPN configuration file by using the following link https://mullvad.net/download/config/
 
@@ -139,7 +139,7 @@ Mullvad users will need to generate a unique OpenVPN configuration file by using
 6. Start the delugevpn docker
 7. Check supervisor.log to make sure you are connected to the tunnel
 
-**Mullvad provider**
+**Mullvad example**
 
 This currently acts as an "airvpn" provider as Mullvad also use certificate based authentication.
 
