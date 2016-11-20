@@ -140,7 +140,7 @@ Mullvad users will need to generate a unique OpenVPN configuration file:
 7. Start the `delugevpn` docker
 8. Check `supervisor.log` to make sure you are connected to the tunnel
 
-Configuring a forwarded port is also recommended: the following link: 
+Configuring a forwarded port is also recommended:
 
 1. Access your [My account](https://mullvad.net/account/) page
 2. Add a port and note the port number
