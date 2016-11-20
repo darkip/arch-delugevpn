@@ -33,6 +33,7 @@ docker run -d \
     -e VPN_PROTOCOL=<vpn remote protocol> \
     -e VPN_DEVICE_TYPE=<tun|tap> \
     -e VPN_PROV=<pia|airvpn|custom> \
+    -e VPN_INCOMING_PORT=<vpn incoming port> \
     -e STRONG_CERTS=<yes|no> \
     -e ENABLE_PRIVOXY=<yes|no> \
     -e LAN_NETWORK=<lan ipv4 network>/<cidr notation> \
@@ -122,6 +123,46 @@ docker run -d \
     -e PGID=0 \
     binhex/arch-delugevpn
 ```
+
+**Mullvad example**
+
+Mullvad users will need to generate a unique OpenVPN configuration file by using the following link https://mullvad.net/download/config/
+
+1. Select "Other platforms"
+2. Click "Get config" and save the zip somewhere safe
+3. Start the delugevpn docker to create the folder structure
+4. Stop the delugevpn docker
+5. In the /config/openvpn folder on the host:
+    (a) Unzip the downloaded zip file
+    (b) Delete the "mullvad_windows.conf.ovpn" file
+    (c) Rename the "mullvad_linux.conf" file to "mullvad_linux.ovpn"
+6. Start the delugevpn docker
+7. Check supervisor.log to make sure you are connected to the tunnel
+
+**Mullvad example**
+docker run -d \
+    --cap-add=NET_ADMIN \
+    -p 8112:8112 \
+    -p 8118:8118 \
+    -p 58846:58846 \
+    --name=delugevpn \
+    -v /apps/docker/deluge/data:/data \
+    -v /apps/docker/deluge/config:/config \
+    -v /etc/localtime:/etc/localtime:ro \
+    -e VPN_ENABLED=yes \
+    -e VPN_REMOTE=se.mullvad.net \
+    -e VPN_PORT=1300 \
+    -e VPN_PROTOCOL=udp \
+    -e VPN_DEVICE_TYPE=tun \
+    -e VPN_PROV=airvpn \
+    -e VPN_INCOMING_PORT=12345 \
+    -e ENABLE_PRIVOXY=no \
+    -e LAN_NETWORK=192.168.1.0/24 \
+    -e NAME_SERVERS=8.8.8.8,8.8.4.4 \
+    -e DEBUG=false \
+    -e PUID=0 \
+    -e PGID=0 \
+    binhex/arch-delugevpn
 
 **Notes**
 
