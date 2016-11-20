@@ -130,14 +130,14 @@ Mullvad users will need to generate a unique OpenVPN configuration file by using
 
 1. Select "Other platforms"
 2. Click "Get config" and save the zip somewhere safe
-3. Start the delugevpn docker to create the folder structure
-4. Stop the delugevpn docker
-5. In the /config/openvpn folder on the host:
+3. Start the `delugevpn` docker to create the folder structure
+4. Stop the `delugevpn` docker
+5. In the `/config/openvpn` folder on the host:
     1. Unzip the downloaded zip file
-    2. Delete the "mullvad_windows.conf.ovpn" file
-    3. Rename the "mullvad_linux.conf" file to "mullvad_linux.ovpn"
-6. Start the delugevpn docker
-7. Check supervisor.log to make sure you are connected to the tunnel
+    2. Delete the `mullvad_windows.conf.ovpn` file
+    3. Rename the `mullvad_linux.conf` file to `mullvad_linux.ovpn`
+6. Start the `delugevpn` docker
+7. Check `supervisor.log` to make sure you are connected to the tunnel
 
 It is also recommended to set port forwarding by going to https://mullvad.net/account/ and adding a port which should be provided as the
 `VPN_INCOMING_PORT` env var.
