@@ -1,4 +1,4 @@
-FROM binhex/arch-openvpn
+FROM darkip/arch-openvpn
 MAINTAINER binhex
 
 # additional files
