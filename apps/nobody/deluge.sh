@@ -176,7 +176,7 @@ else
 
 				fi
 
-				if [[ ! -z "$vpn_port"]]; then
+				if [[ ! -z "$vpn_port" ]]; then
 
 					# enable bind incoming port to specific port (disable random)
 					/usr/bin/deluge-console -c /config "config --set random_port False"
