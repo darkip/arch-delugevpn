@@ -11,6 +11,9 @@ else
 
 fi
 
+# Make sure deluge is gracefully killed when this script is
+trap 'kill $(cat /config/deluged.pid); exit 0' SIGTERM
+
 # if vpn set to "no" then don't run openvpn
 if [[ $VPN_ENABLED == "no" ]]; then
 
