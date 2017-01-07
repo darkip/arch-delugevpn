@@ -34,6 +34,7 @@ docker run -d \
     -e VPN_DEVICE_TYPE=<tun|tap> \
     -e VPN_PROV=<pia|airvpn|custom> \
     -e VPN_INCOMING_PORT=<vpn incoming port> \
+    -e VPN_INCOMING_HOST=<vpn incoming host> \
     -e STRONG_CERTS=<yes|no> \
     -e ENABLE_PRIVOXY=<yes|no> \
     -e LAN_NETWORK=<lan ipv4 network>/<cidr notation> \
@@ -161,12 +162,13 @@ docker run -d \
     -v /apps/docker/deluge/config:/config \
     -v /etc/localtime:/etc/localtime:ro \
     -e VPN_ENABLED=yes \
-    -e VPN_REMOTE=se.mullvad.net \
+    -e VPN_REMOTE=se2.mullvad.net \
     -e VPN_PORT=1300 \
     -e VPN_PROTOCOL=udp \
     -e VPN_DEVICE_TYPE=tun \
     -e VPN_PROV=airvpn \
     -e VPN_INCOMING_PORT=12345 \
+    -e VPN_INCOMING_HOST=se2x.mullvad.net \
     -e ENABLE_PRIVOXY=yes \
     -e LAN_NETWORK=192.168.1.0/24 \
     -e NAME_SERVERS=8.8.8.8,8.8.4.4 \
