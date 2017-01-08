@@ -125,7 +125,8 @@ else
 						check_host=${VPN_INCOMING_HOST:-$deluge_ip}
 
 						# run netcat to identify if port still open, use exit code
-						nc_exitcode=$(/usr/bin/nc -z -w 3 "${check_host}" "${deluge_port}")
+						/usr/bin/nc -z -w 3 "${check_host}" "${deluge_port}"
+						nc_exitcode=$?
 
 						if [[ "${nc_exitcode}" -ne 0 ]]; then
 
