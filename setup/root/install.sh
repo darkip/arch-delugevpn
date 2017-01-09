@@ -19,7 +19,7 @@ find /tmp/scripts-master/ -type f -name '*.sh' -exec mv -i {} /root/  \;
 ####
 
 # define pacman packages
-pacman_packages="pygtk python2-service-identity python2-mako python2-notify gnu-netcat dnsutils"
+pacman_packages="pygtk python2-service-identity python2-mako python2-notify gnu-netcat"
 
 # install compiled packages using pacman
 if [[ ! -z "${pacman_packages}" ]]; then

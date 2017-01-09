@@ -17,13 +17,6 @@ for lan_network_item in "${lan_network_list[@]}"; do
 
 done
 
-if [[ ! -z "$VPN_INCOMING_HOST" ]]; then
-	echo "[info] Adding VPN_INCOMING_HOST ($VPN_INCOMING_HOST) as route via docker eth0"
-	vpn_incoming_ip=$(dig +short $VPN_INCOMING_HOST)
-	ip route add $vpn_incoming_ip via $DEFAULT_GATEWAY dev eth0
-fi
-
-
 echo "[info] ip route defined as follows..."
 echo "--------------------"
 ip route
