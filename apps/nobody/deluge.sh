@@ -121,11 +121,8 @@ else
 
 					else
 
-						# Attempt to check the port is open and responding on external host, falling back to the internal VPN IP
-						check_host=${VPN_INCOMING_HOST:-$deluge_ip}
-
 						# run netcat to identify if port still open, use exit code
-						/usr/bin/nc -z -w 3 "${check_host}" "${deluge_port}"
+						/usr/bin/nc -z -w 3 "${deluge_ip}" "${deluge_port}"
 						nc_exitcode=$?
 
 						if [[ "${nc_exitcode}" -ne 0 ]]; then
